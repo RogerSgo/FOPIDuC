@@ -14,13 +14,8 @@ A FOPID controller was developed whose parameters were tuned using the FOMCON to
 - PID Tuner
 <h2> Contenido </h2>
 
-- Escenas CoppeliaSim para Evaluacion y Entrenamiento.
-- Archivos .ipynb para Evaluacion y Entrenamiento.
-- Modelos entrenados con 100, 5000 y 10000 episodios.
-<h2> Procedimiento </h2>
-
-- Entrenamiento: Abrir y ejecutar escena de Entrenamiento y archivo.ipynb de Entrenamiento
-- Evaluación: Abrir y ejecutar escena de Evaluación y archivo.ipynb de Evaluacion.
+- Archivos de diseño y simulacion en MATLAB y LabVIEW.
+- Archivo main.c para el microcontrolador.
 <h2> Media </h2>
 
 Demo video: Demonstration of operation - https://youtu.be/aNTi4g8SxgM - https://youtube.com/shorts/L9FvxSyJYEE?feature=share
