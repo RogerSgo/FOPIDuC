@@ -23,4 +23,4 @@ A FOPID controller was developed whose parameters were tuned using the FOMCON to
 - Evaluación: Abrir y ejecutar escena de Evaluación y archivo.ipynb de Evaluacion.
 <h2> Media </h2>
 
-Demo video: Demonstration of operation - https://youtu.be/aNTi4g8SxgM
+Demo video: Demonstration of operation - https://youtu.be/aNTi4g8SxgM - https://youtube.com/shorts/L9FvxSyJYEE?feature=share
