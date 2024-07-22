@@ -1,19 +1,17 @@
 
 <h1> Digital implementation of a fractional-order controller on an ARM Cortex M3 microcontroller </h1>
 
-![Zona de trabajo](https://github.com/RogerSgo/DRLForManipulator/blob/main/DRL-PosToOb/EscenasSim/escena.png)
+![Zona de trabajo]([https://github.com/RogerSgo/DRLForManipulator/blob/main/DRL-PosToOb/EscenasSim/escena.png](https://github.com/RogerSgo/FOPIDuC/blob/main/Screenshot%202024-07-21%20170346.png))
 <h2> Description </h2>
 
-This project is based on: https://github.com/Hazuwall/VisionBasedControl. The files were updated with the latest version of CoppeliaSim.
+A FOPID controller was developed whose parameters were tuned using the FOMCON toolbox and coded in C language. The controller was implemented in an ARM CORTEX M3 microcontroller to control the speed of a DC motor. In the study, several mathematical tools in MATLAB are presented that facilitate the design and both continuous and discrete implementation of the fractional-order controller. Closed-loop simulations were carried out with integer-order and discretized approximations of the fractional-order controller. Finally, an experimental setup was established to verify the performance of the FOPID controller.
 <h2> Software: </h2>
 
-- CoppeliaSim 4.5.1 (March 29 2023)
-- Python 3.9.16
-- keras 2.11
-- Numpy 1.21.5
-- OpenCV 4.6
-- Matplotlib 0.1.6
-- Tensorflow 2.11
+- MATLAB
+- LabVIEW
+- Atmel Studio 7
+- FOMCON
+- PID Tuner
 <h2> Contenido </h2>
 
 - Escenas CoppeliaSim para Evaluacion y Entrenamiento.
