@@ -22,7 +22,7 @@
 #define INIT_DUTY_VALUE		5		// Duracion del pulso activo (ALTO)
 
 #define CONTROLLER_ORDER	6U		// Siete coeficientes: orden 6
-#define NUM_COEFFICIENTS	(CONTROLLER_ORDER + 1U)
+#define NUM_COEFFICIENTS	5 + 1U
 
 #define BG_COLOR	ILI9341_COLOR(0, 0, 0)   // Color de fondo (negro) cuando se limpia la pantalla.
 #define TOTAL_PIXELS ((uint32_t)ILI9341_DEFAULT_WIDTH * ILI9341_DEFAULT_HEIGHT)   // Total de pixeles de la pantalla 320x240
@@ -110,18 +110,19 @@ int main (void)
 	uint32_t vel_red;
 	float setp = 10.0f;		// Valor de punto de ajuste [rpm]
 	
-	/* Coeficientes del repositorio, escritos en potencias de z^-1 y
+	//Coeficientes del repositorio, escritos en potencias de z^-1 y
 	const float a[NUM_COEFFICIENTS] = {
-		1.0f, -5.369f, 11.89f, -13.88f, 8.973f, -3.034f, 0.416f
+		1.0f, -4.396f, 7.663f, -6.615f, 2.823f, -0.4756f
 	};
 	const float b[NUM_COEFFICIENTS] = {
-		-0.07469f, 0.8f, -2.741f, 4.465f, -3.828f, 1.674f, -0.2948f
+		0.4746f, -2.225f, 4.177f, -3.928f, 1.85f, -0.3492f
 	};
 	float error_history[NUM_COEFFICIENTS] = {0.0f};
 	float output_history[NUM_COEFFICIENTS] = {0.0f};
 	
 	//uint32_t ek_1=0;uint32_t ek_2=0;uint32_t ek_3=0;uint32_t ek_4=0;uint32_t ek_5=0;uint32_t ek_6=0;uint32_t ek_7=0;
 	//uint32_t uk_1=0;uint32_t uk_2=0;uint32_t uk_3=0;uint32_t uk_4=0;uint32_t uk_5=0;uint32_t uk_6=0;uint32_t uk_7=0;
+	
 /* *************** Codigo de inicializacion *************** */
 	board_init();
 	sysclk_init();
