@@ -5,6 +5,10 @@
 <h2> Description </h2>
 
 A FOPID controller was developed whose parameters were tuned using the FOMCON toolbox and coded in C language. The controller was implemented in an ARM CORTEX M3 microcontroller to control the speed of a DC motor. In the study, several mathematical tools in MATLAB are presented that facilitate the design and both continuous and discrete implementation of the fractional-order controller. Closed-loop simulations were carried out with integer-order and discretized approximations of the fractional-order controller. Finally, an experimental setup was established to verify the performance of the FOPID controller.
+
+This repository contains supporting implementation materials associated with the embedded FOPID controller study. The available content includes controller-design and discretization scripts, simulation and monitoring files, embedded C source code, supplementary controller records, and demonstration media.
+
+The repository does not currently include the original raw experimental time-series datasets, the complete microcontroller project, or an automated workflow for reproducing every figure and table. Consequently, it should be interpreted as supporting implementation documentation rather than a complete reproducibility package.
 <h2> Software: </h2>
 
 - MATLAB
