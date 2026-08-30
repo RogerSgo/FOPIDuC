@@ -81,7 +81,7 @@ static void tc_capture_initialize(void)
 			| TC_CMR_LDRA_RISING	// Carga RA: Flanco ascendente de TIOA 
 			| TC_CMR_LDRB_FALLING	// Carga RB: Flanco de caida de TIOA */
 			| TC_CMR_ABETRG		// Disparo (trigger) externo: TIOA 
-			| TC_CMR_ETRGEDG_FALLING	// Borde de disparo (trigger) externo: borde de caída 
+			| TC_CMR_ETRGEDG_FALLING	// Borde de disparo (trigger) externo: borde de caÃ­da 
 	);
 }
 void TC_Handler(void)	// Breve controlador de interrupciones para el TC TC_CHANNEL_CAPTURE
@@ -108,8 +108,8 @@ int main (void)
 	uint32_t setp = 10;		// Valor de Punto de Ajuste1, -4.38, 7.595, -6.501, 2.74, -0.4532
 	
 	int order = 7;		// filtro IIR de orden 4 0.4656, -2.223, 4.25, -4.068, 1.95, -0.3743
-	uint32_t a[] = {0.416, -3.034, 8.973, -13.88, 11.89, -5.369, 1};//den{-0.760672, 2.51369, -2.75301, 1}; // funciona 0.416, -3.034, 8.973, -13.88, 11.89, -5.369, 1
-	uint32_t b[] = {-0.2948, 1.674, -3.828, 4.465, -2.741, 0.8, -0.07469};//num{-0.949776, 3.25646, -3.71102, 1.4051}; // funciona -0.2948, 1.674, -3.828, 4.465, -2.741, 0.8, -0.07469
+	uint32_t a[] = {-0.4756, 2.823, -6.615, 7.663, -4.396, 1};//den{-0.760672, 2.51369, -2.75301, 1}; // funciona 0.416, -3.034, 8.973, -13.88, 11.89, -5.369, 1
+	uint32_t b[] = {-0.3492, 1.85, -3.928, 4.177, -2.225, 0.4746};//num{-0.949776, 3.25646, -3.71102, 1.4051}; // funciona -0.2948, 1.674, -3.828, 4.465, -2.741, 0.8, -0.07469
 	uint32_t s[0];
 	
 	//uint32_t ek_1=0;uint32_t ek_2=0;uint32_t ek_3=0;uint32_t ek_4=0;uint32_t ek_5=0;uint32_t ek_6=0;uint32_t ek_7=0;
@@ -132,7 +132,7 @@ int main (void)
 	pio_configure_pin(C_PWM, PIO_TYPE_PIO_PERIPH_B);
 	ioport_set_pin_dir(LED, IOPORT_DIR_OUTPUT);		// Establecer el gpio led como salida.
 	ioport_set_pin_mode(Canal_A, PIN_TC_CAPTURE_MUX);	// Configurar Pines PIO para TC
-	ioport_disable_pin(Canal_A);	// Deshabilitar el pin IOPORT, basado en un pin creado con IOPORT_CREATE_PIN () para habilitar el modo periférico
+	ioport_disable_pin(Canal_A);	// Deshabilitar el pin IOPORT, basado en un pin creado con IOPORT_CREATE_PIN () para habilitar el modo perifÃ©rico
 	
 	pmc_enable_periph_clk(ID_PWM);
 	pwm_channel_disable(PWM, PWM_CHANNEL_0);
@@ -175,8 +175,8 @@ int main (void)
 				
 		tc_disable_interrupt(TC, TC_CHANNEL_CAPTURE, TC_IDR_LDRBS);
 		
-		frequence = (sysclk_get_peripheral_bus_hz(TC)/divisors[TC_CAPTURE_TIMER_SELECTION])/gs_ul_captured_rb;		// frecuencia de la señal de encoder
-		dutycycle = (gs_ul_captured_rb - gs_ul_captured_ra) * 100 /	gs_ul_captured_rb;		// ciclo de trabajo de la señal de encoder
+		frequence = (sysclk_get_peripheral_bus_hz(TC)/divisors[TC_CAPTURE_TIMER_SELECTION])/gs_ul_captured_rb;		// frecuencia de la seÃ±al de encoder
+		dutycycle = (gs_ul_captured_rb - gs_ul_captured_ra) * 100 /	gs_ul_captured_rb;		// ciclo de trabajo de la seÃ±al de encoder
 		vel = (frequence*60/1000);		// Velocidad angular SIN reductor [rpm]
 		vel_red = vel/200;	// Velocidad angular CON reductor (vel/cte_reductor)
 					
@@ -235,7 +235,7 @@ int main (void)
 		motor(sal);		//enviar senal pwm al puerto de salida
 		printf("%" PRIu32 "\n", vel_red);
 		/*
-		if (!gs_ul_captured_pulses)		// si no recibe alguna señal, se reestablecen a cero las variables de
+		if (!gs_ul_captured_pulses)		// si no recibe alguna seÃ±al, se reestablecen a cero las variables de
 		{
 			gs_ul_captured_pulses = 0;
 			gs_ul_captured_ra = 0;
